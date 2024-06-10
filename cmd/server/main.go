@@ -28,7 +28,7 @@ func initRouter(r *gin.Engine) {
 	{
 		qrcodeRoute := authRoute.Group("/qrcode")
 		qrcodeRoute.POST("/verify", handler.VerifyUsername)
-		qrcodeRoute.POST("/uuid", handler.GenUUID)
+		qrcodeRoute.GET("/uuid", handler.GenUUID)
 		qrcodeRoute.GET("/status", handler.VerifyQRCode)
 	}
 }
