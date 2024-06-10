@@ -5,6 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/xwxb/qr-auth-service/internal/config"
 	"github.com/xwxb/qr-auth-service/internal/handler"
+	"github.com/xwxb/qr-auth-service/internal/middleware"
 	"github.com/xwxb/qr-auth-service/internal/service"
 	"log"
 )
@@ -18,6 +19,7 @@ func main() {
 	service.Init(cfg)
 
 	r := gin.Default()
+	r.Use(middleware.CORSMiddleware())
 	initRouter(r)
 	portStr := fmt.Sprintf(":%d", cfg.Server.Port)
 	r.Run(portStr)
