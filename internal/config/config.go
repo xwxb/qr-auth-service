@@ -10,10 +10,9 @@ type Config struct {
 }
 
 type ServerConfig struct {
-	Host         string `mapstructure:"host"`
-	Port         int    `mapstructure:"port"`
-	ReadTimeout  int    `mapstructure:"read_timeout"`
-	WriteTimeout int    `mapstructure:"write_timeout"`
+	Port         int `mapstructure:"port"`
+	ReadTimeout  int `mapstructure:"read_timeout"`
+	WriteTimeout int `mapstructure:"write_timeout"`
 }
 
 type RedisConfig struct {

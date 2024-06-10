@@ -19,8 +19,8 @@ func main() {
 
 	r := gin.Default()
 	initRouter(r)
-	addr := fmt.Sprintf("%s:%d", "localhost", cfg.Server.Port)
-	r.Run(addr)
+	portStr := fmt.Sprintf(":%d", cfg.Server.Port)
+	r.Run(portStr)
 }
 
 func initRouter(r *gin.Engine) {
